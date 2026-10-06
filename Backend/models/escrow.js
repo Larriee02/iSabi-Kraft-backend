@@ -50,7 +50,7 @@ const escrowSchema = new mongoose.Schema(
     },
     materialPaymentStatus: {
         type: String,
-        enum: ["pending", "completed", "failed"],
+        enum: ["pending", "completed", "failed", "not_applicable"],
         default: "pending"
     },
     balancePaymentStatus: {

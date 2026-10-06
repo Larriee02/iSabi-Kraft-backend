@@ -1,6 +1,6 @@
-export const paystackBaseUrl = process.env.PAYSTACK_BASE_URL || 'https://api.paystack.co';
+const paystackBaseUrl = process.env.PAYSTACK_BASE_URL || 'https://api.paystack.co';
 
-export async function paystackRequest(path, { method = 'GET', body } = {}) {
+const paystackRequest = async (path, method = 'GET', body = null) => {
   const response = await fetch(`${paystackBaseUrl}${path}`, {
     method,
     headers: {
@@ -17,3 +17,5 @@ export async function paystackRequest(path, { method = 'GET', body } = {}) {
   }
   return result.data;
 }
+
+export {paystackBaseUrl, paystackRequest};
